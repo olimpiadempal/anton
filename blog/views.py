@@ -4,6 +4,7 @@ from .models import Post
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
 from django.shortcuts import redirect
+from django.db.models import Q
 
 
 
@@ -13,6 +14,26 @@ from django.shortcuts import redirect
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
+    
+    queryset_list = Post.objects.active()
+    if request.user.is_staff or request.user.is_superuser:
+        queryset_list = Post.objects.all()
+    
+    query = request.GET.get('q')
+    if query:
+        queryset_list = queryset_list.filter(title__icontains=query)
+
+
+    paginator = Paginator(queryset_list, 10)
+    page_request_var = 'page'
+    page = request.GET.get(page_request_var)
+    try:
+        queryset = paginator.page(page)
+    except PageNotAnInteger:
+        queryset = paginator.page(1)
+    except EmptyPage:
+        queryset = paginator.page(paginator.num_pages)
+
 
 def post_detail(request, pk):
     Post.objects.get(pk=pk)
