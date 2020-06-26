@@ -108,7 +108,7 @@ def post_category_lifestyle(request):
 
 
 def post_category_sport(request):
-        osts = Post.objects.filter(category="Sport")
+        posts = Post.objects.filter(category="Sport")
 
         return render(request, 'blog/post_category_sport.html', {'posts': posts})
 
