@@ -22,12 +22,12 @@
                     <h1><a href="/">Antons Blog</a></h1>
                 </div>
               <ul class="nav navbar-nav">
-                <li class="active"><a href="http://127.0.0.1:8000/">Home</a></li>
+                <li><a href="http://127.0.0.1:8000/">Home</a></li>
                 <li><a href="{% url 'post_category_essen' %}">Essen</a></li>
                 <li><a href="{% url 'post_category_koerper' %}">Körper</a></li>
                 <li><a href="{% url 'post_category_sport'  %}">Sport</a></li>
                 <li><a href="{% url 'post_category_lifestyle'  %}">Lifestyle</a></li>
-                <li><a href="{% url 'post_category_anders'  %}">Anders</a></li>
+                <li class="active"><a href="{% url 'post_category_anders'  %}">Anders</a></li>
               </ul>
              
               <ul class="nav navbar-nav navbar-right">
@@ -43,20 +43,41 @@
             </ul>
             </div>
           </nav>
-        <br />
-          <div align= "center">
-          <img src="anton.PNG" alt="Admin" width="400" height="200">
-          </div>
-        <br />
+       
          
     <body> 
+
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
                     {% block content %}
+                    {% for post in posts %}
+                    <div class="post">
+                        <div class="date">
+                            <code>Erstelldatum:</code>{{ post.published_date }}
+                        </div>
+
+                        <div class="author">
+                            <code>Autor:</code>{{ post.author }}
+                        </div>
+                        
+                        <div class="category">
+                            <code>Kategorie:</code>{{ post.category }}
+                            
+                        </div>
+
+
+                        <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                        
+                        
+                        
+                        <p>{{ post.text|linebreaksbr }}</p>
+                    </div>
+                    {% endfor %}
                     {% endblock %}
                 </div>
             </div>
         </div>
     </body>
 </html>
+

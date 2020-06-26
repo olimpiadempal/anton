@@ -12,27 +12,24 @@
         <div class="page-header">
             <h1><a href="/">Antons Blog</a></h1>
         </div>
-<<<<<<< HEAD
         
-=======
-        <br />
-        <div align= "center">
-          <img src="anton.PNG" alt="Admin" width="400" height="200">
-        </div>
-        <br />
->>>>>>> 6f056515cb9c380ffe9ad026d145e85cb028613a
-        <div class="content container">
+
+       
 
             <div class="row">
                 <div class="col-md-8">
+              
 
                 {% block content %}
-                    
-
-                    <form method='GET' action=''>
+                
+                <form method='GET' action=''>
+        
                     <input type='text' name='q' placeholder="Search posts" value='{{ request.GET.q }}' />
                     <input type='submit' value='Search' />
-                    </form>
+                    
+                
+                </form>
+                
 
 
                     {% for post in posts %}
@@ -45,7 +42,8 @@
                                 <code>Autor:</code>{{ post.author }}
                             </div>
                             <div class="category">
-                                <code>Kategorie:</code>{{ post.category }}
+                                <code>Kategorie:</code><a href="{% url 'post_detail' pk=post.pk %}">{{ post.category }}</a>
+                                
                             </div>
 
 
