@@ -25,10 +25,10 @@ body {
 }
 
 .image {
- margin-bottom: 20px;
- margin-left: 250px;
-
-}
+    margin-bottom: 20px;
+    margin-left: 250px;
+   
+   }
 
 h1, h2, h3, h4 {
     font-family: 'Quicksand', sans-serif, cursive;
