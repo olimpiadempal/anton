@@ -20,6 +20,14 @@ body {
 
 .content {
     margin-left: 40px;
+    margin-right: 40px;
+}
+
+.image {
+ margin-bottom: 20px;
+ margin-top: 10px;
+ margin-left: 300px;
+
 }
 
 h1, h2, h3, h4 {

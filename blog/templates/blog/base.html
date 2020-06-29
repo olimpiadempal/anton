@@ -8,17 +8,15 @@
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
-    
-    
 
-   
-    <div class="content container">
+  <div class="content container">
+
     <body>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
-            
+
                 <div class="page-header">
-                    
+
                     <h1><a href="/">Antons Blog</a></h1>
                 </div>
               <ul class="nav navbar-nav">
@@ -29,7 +27,7 @@
                 <li><a href="{% url 'post_category_lifestyle'  %}">Lifestyle</a></li>
                 <li><a href="{% url 'post_category_anders'  %}">Anders</a></li>
               </ul>
-             
+
               <ul class="nav navbar-nav navbar-right">
                 {% if user.is_anonymous %}
                     <li><a href="http://127.0.0.1:8000/admin/login/?next=/admin/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -43,14 +41,13 @@
             </ul>
             </div>
           </nav>
-        <br />
-          <div align= "center">
-          <img src="anton.PNG" alt="Admin" width="400" height="200">
-          </div>
-        <br />
-         
-    <body> 
-        <div class="content container">
+
+      <br />
+      <div class= image >
+      <img src="{% static 'images/anton.PNG' %}" width="600px" height="300px"/>
+      </div>
+      <br />
+
             <div class="row">
                 <div class="col-md-8">
                     {% block content %}

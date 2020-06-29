@@ -9,7 +9,7 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
-    
+
     CATEGORY1 = 'Essen'
     CATEGORY2 = 'Körper'
     CATEGORY3 = 'Lifestyle'
