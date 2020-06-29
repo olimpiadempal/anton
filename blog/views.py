@@ -13,15 +13,18 @@ from django.db.models import Q
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    #return render(request, 'blog/post_list.html', {'posts': posts})
     
-    queryset_list = Post.objects.active()
-    if request.user.is_staff or request.user.is_superuser:
-        queryset_list = Post.objects.all()
-    
-    query = request.GET.get('q')
-    if query:
-        queryset_list = queryset_list.filter(title__icontains=query)
+    category = request.GET.get('category')
+    if category:
+        posts = posts.filter(category=category)
+    return render(request, 'blog/post_list.html', {'posts': posts, 'category_choices': Post.CATEGORY_CHOICES })
+
+
+
+
+
+
 
 
     paginator = Paginator(queryset_list, 10)
