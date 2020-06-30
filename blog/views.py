@@ -85,35 +85,4 @@ def post_edit(request, pk):
 
 
 
-def post_category_essen(request):
-    
-        posts = Post.objects.filter(category="Essen")
-
-        return render(request, 'blog/post_category_essen.html', {'posts': posts})
-
-   
-
-def post_category_anders(request):
-        posts = Post.objects.filter(category="Anders")
-
-        return render(request, 'blog/post_category_anders.html', {'posts': posts})
-
-def post_category_koerper(request):
-        posts = Post.objects.filter(category="Körper")
-
-        return render(request, 'blog/post_category_koerper.html', {'posts': posts})
-
-
-def post_category_lifestyle(request):
-        posts = Post.objects.filter(category="Lifestyle")
-
-        return render(request, 'blog/post_category_lifestyle.html', {'posts': posts})
-
-
-def post_category_sport(request):
-        posts = Post.objects.filter(category="Sport")
-
-        return render(request, 'blog/post_category_sport.html', {'posts': posts})
-
-
 
