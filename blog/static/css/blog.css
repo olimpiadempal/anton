@@ -1,21 +1,28 @@
-h1 a, h2 a {
-    color: #516e9e;
-    font-family: 'Quicksand', sans-serif;
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
 }
-body {
-    background-color: #d5d8dc;
-    padding-left: 120px;
-}
+
 .page-header {
     background-color: #516e9e;
     margin-top: 0;
     padding: 20px 20px 20px 20px;
 }
 
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
+h1 a{
+    font-family: 'Days One';
+}
+
+body{
+    background-color: #d5d8dc;
+    padding-left: 120px;
+}
+
+h2 a{
+    font-family: 'Quicksand', sans-serif;
     font-size: 36pt;
-    text-decoration: none;
+    color: #516e9e;
 }
 
 .content {
@@ -26,23 +33,18 @@ body {
 .image {
     margin-bottom: 20px;
     margin-left: 270px;
-
-   }
-
-h1, h2, h3, h4 {
-    font-family: sans-serif, cursive;
 }
 
 .date {
-    color: #5783ff;
+    color: #630923;
 }
 
 .author {
-    color: #5783ff;
+    color: #630923;
 }
 
 .category {
-    color: #5783ff;
+    color: #630923;
 }
 
 .save {
