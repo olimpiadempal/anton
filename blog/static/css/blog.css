@@ -20,8 +20,9 @@ body{
 }
 
 h2 a{
-    font-family: 'Quicksand', sans-serif;
-    font-size: 36pt;
+    
+    font-family: 'Papyrus', fantasy;
+    font-size: 30pt;
     color: #516e9e;
 }
 
@@ -67,5 +68,4 @@ h2 a{
 }
 
 .post h2 a, .post h2 a:visited {
-    color: #632b2b;
-}
+    color: #516e9e;
