@@ -2,7 +2,7 @@
 {% load static %}
 <html>
     <head>
-        <title>Antons Blog</title>
+        <title>Antons blog</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
@@ -14,39 +14,33 @@
             <h1><a href="/">Antons Blog</a></h1>
         </div>
 
+        <div class="row">
+            <div class="col-md-8">
 
+{% block content %}
+{% for post in object_list %}
+<ul>
+              <div class="post">
 
+                  <div class="date">
+                      <code>Erstelldatum:</code>{{ post.published_date }}
+                  </div>
 
-            <div class="row">
-                <div class="col-md-8">
+                  <div class="author">
+                      <code>Autor:</code>{{ post.author }}
+                  </div>
 
+                  <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
 
-                {% block content %}
-                {% for post in posts %}
-                        <div class="post">
-                            <div class="date">
-                                <code>Erstelldatum:</code>{{ post.published_date }}
-                            </div>
+                <p>{{ post.text|linebreaksbr }}</p>
 
-                            <div class="author">
-                                <code>Autor:</code>{{ post.author }}
-                            </div>
-                            <div class="category">
-                                <code>Kategorie:</code>{{ post.category }}
+                <img src="{{ post.image.url}}" alt="{{ title }}">
 
-                            </div>
-
-
-                            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-
-
-
-                            <p>{{ post.text|linebreaksbr }}</p>
-                        </div>
-                    {% endfor %}
-                {% endblock %}
-                </div>
             </div>
-        </div>
+        {% endfor %}
+        {% endblock %}
+</ul>
+</div>
+</div>
     </body>
 </html>

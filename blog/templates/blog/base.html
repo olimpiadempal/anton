@@ -11,59 +11,53 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    </head>
-    <div class="scrollbar scrollbar-near-moon">
-        <div class="force-overflow"></div>
-      </div>
-
-  <div class="content container">
-
-    <body>
-
-        <div class="page-header">
-
-            <h1><a href="/">Antons Blog</a></h1>
-
+      </head>
+      <div class="scrollbar scrollbar-near-moon">
+          <div class="force-overflow"></div>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #516e9e;">
 
-        {% if user.is_authenticated %}
-        <a class="btn btn-outline-light btn-lg" href="{% url 'post_new' %}" role="button"><span class="glyphicon glyphicon-plus"></span> Add a new post</a>
-                {% endif %}
+    <div class="content container">
 
+      <body>
 
+          <div class="page-header">
 
+              <h1><a href="/">Antons Blog</a></h1>
 
-          <div class="dropdown">
-            <button class="btn btn-outline-light btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Filter by Category
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                {% for choices in category_choices %}
-                <a class="dropdown-item" href="?category={{ choices.0 }}">{{ choices.1 }}</a>
-                {% endfor %}
-            </div>
+          </div>
+          <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #516e9e;">
 
-            {% if user.is_anonymous %}
+          {% if user.is_authenticated %}
+          <a class="btn btn-outline-light btn-lg" href="{% url 'post_new' %}" role="button"><span class="glyphicon glyphicon-plus"></span> Add a new post</a>
+                  {% endif %}
 
-            <a class="btn btn-outline-light btn-lg my-2 ml-20" href="http://127.0.0.1:8000/admin/login/?next=/admin/" role="button">Login</a>
-            {% endif %}
-            {% if user.is_authenticated %}
-             <a class="btn btn-outline-light btn-lg float-right" href="http://127.0.0.1:8000/admin/login/?next=/admin/" role="button">Logout</a>
+            <div class="dropdown">
+              <button class="btn btn-outline-light btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Filter by Category
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                
+              </div>
 
-            {% endif %}
+              {% if user.is_anonymous %}
 
+              <a class="btn btn-outline-light btn-lg my-2 ml-20" href="http://127.0.0.1:8000/admin/login/?next=/admin/" role="button">Login</a>
+              {% endif %}
+              {% if user.is_authenticated %}
+               <a class="btn btn-outline-light btn-lg float-right" href="http://127.0.0.1:8000/admin/login/?next=/admin/" role="button">Logout</a>
 
-        </nav>
-        </div>
-      <div class="image"><img src="{% static 'images/anton.PNG' %}" width="600px" height="300px"/></div>
-      <br/>
-            <div class="row">
-                <div class="col-md-8">
-                    {% block content %}
-                    {% endblock %}
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+              {% endif %}
+
+          </nav>
+          </div>
+        <div class="image"><img src="{% static 'images/anton.PNG' %}" width="600px" height="300px"/></div>
+        <br/>
+              <div class="row">
+                  <div class="col-md-8">
+                      {% block content %}
+                      {% endblock %}
+                  </div>
+              </div>
+          </div>
+      </body>
+    </html>

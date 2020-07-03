@@ -1,13 +1,13 @@
+.page-header {
+    background-color: #516e9e;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
     font-size: 36pt;
     text-decoration: none;
-}
-
-.page-header {
-    background-color: #516e9e;
-    margin-top: 0;
-    padding: 20px 20px 20px 20px;
 }
 
 h1 a{
@@ -20,31 +20,18 @@ body{
 }
 
 h2 a{
-    
+
     font-family: 'Papyrus', fantasy;
     font-size: 30pt;
     color: #516e9e;
 }
 
 .content {
-    margin-left: 0px;
-    margin-right: 40px;
+    margin-left: 40px;
 }
 
-.image {
-    margin-bottom: 20px;
-    margin-left: 270px;
-}
 
 .date {
-    color: #630923;
-}
-
-.author {
-    color: #630923;
-}
-
-.category {
     color: #630923;
 }
 
@@ -69,3 +56,4 @@ h2 a{
 
 .post h2 a, .post h2 a:visited {
     color: #516e9e;
+}
